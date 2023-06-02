@@ -17,40 +17,7 @@ The longest stable subsequence is `[1, 2, 2, 3]` of length 4. Note that each ele
 
 The goal of this problem is to formulate a dynamic programming solution to find the length of the longest stable subsequence and the subsequence itself.
 
-A: Write a Recurrence With Base Case
- 
-Let  𝑛
-  be the length of the original array  [𝑎0,…,𝑎𝑛−1]
- . Define
-𝖫𝖲𝖲𝖫𝖾𝗇𝗀𝗍𝗁(𝑖,𝑎𝑗)
- 
-to be the length of the longest stable subsequence for the subarray from  [𝑎𝑖,…,𝑎𝑛−1]
-  (note that  𝑎𝑖
-  is included) with the additional constraint that the first element in the subsequence chosen (let us call it  𝑎𝑖1
- ) must satisfy
-|𝑎𝑖1−𝑎𝑗|≤1
- 
-.
-
-Notes
-
-0≤𝑖≤𝑛
- .  𝑖=𝑛
-  denotes the empty subarray.
-𝑎𝑗
-  represents a previous choice we have made before encountering the current subproblem. It is made an argument of the recurrence to ensure that the subsequent choice made from  [𝑎𝑖,…,𝑎𝑛−1]
-  satisfies  |𝑎−𝑎𝑗|≤1
- .
-We will use the special value  𝑎𝑗=𝖭𝗈𝗇𝖾
-  to denote that no such element  𝑎𝑗
-  has been chosen.
-YOUR ANSWER HERE
-$\lss(i, a_j) = \begin{cases}
-0 & i = n & \text{# Base Case when subarray is empty} \\
-\lss(i+1, a_j) & i < n\ \text{and}\ a_j \not= \text{None}\ \text{and}\ |a_i - a_j| > 1 & \text{# We cannot choose $a_i$, skip it and move right along}\\
-\max(\lss(i+1, a_j) + 1, \lss(i+1, a_i) ) & i < n\ \text{and}\ \left( a_j = \text{None}\ \text{or}\ |a_i - a_j| \leq 1 \right) & \text{# Choose maximum of two options: take $a_i$ or skip $a_i$}\
-\end{cases}$
-refer assingment 2 for solution
+## Problem 2
 We are given a set of _natural numbers_ $S:\ \{ n_1, \ldots, n_k \}$ and a target _natural number_ $N$.
 
 
@@ -73,20 +40,3 @@ Therefore the problem is as follows:
 The subsequent parts to this problem ask you to derive a dynamic programming solution to this problem.
 
 __Note:__ Because $S$ and $T$ are viewed as sets, each element in the set may occur exactly once.
-
-### Part (A) Write a recursive function
-
-$$\newcommand\targetSum{\textsf{targetSum}}$$
-Write down a recurrence: $\targetSum( \{ S[i], \ldots, S[k] \}, \hat{T} )$ that expresses the best possible solution to the sub problem where 
-  - we choose a subset of $S$ with elements from from $S[i]$  to $S[k]$ inclusive. 
-  - If $i > k$, we take that to be the empty set and 
-  - $\hat{T}$ is the current target.
-  
- Complete the missing portions of the definitions below.
-
-$$\targetSum(\left\{ S[i], \ldots, S[k] \right\}, \hat{T}) = \begin{cases}
-  ??? & \hat{T} < 0 \\
-  ??? & i > k\ \text{and}\ \hat{T} \geq 0 \\
-  \min( ???, ???) & \mbox{otherwise}\\
-\end{cases} $$
-
