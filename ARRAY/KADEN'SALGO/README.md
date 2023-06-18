@@ -1,1 +1,1 @@
-![Alt text](ARRAY/KADEN'SALGO/kaden'salgo.jpeg)
+![Alt text](ARRAY/KADEN'SALGO/kadens_algo.jpeg)
