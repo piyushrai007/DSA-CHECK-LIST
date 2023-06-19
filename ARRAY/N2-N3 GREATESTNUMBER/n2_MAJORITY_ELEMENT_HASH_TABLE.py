@@ -1,4 +1,4 @@
-def majorityElement( A, N):
+def majorityElement(A, N):
         n = len(A)
 
         hashtable = {}
